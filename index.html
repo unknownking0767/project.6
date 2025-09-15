@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Identity Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #7dd8ed;
+    }
+    .id-card {
+      width: 350px;
+      height: 500px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+    }
+    .header {
+      background: #2e86de;
+      color: white;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+    .photo {
+      width: 120px;
+      height: 120px;
+      margin: 20px auto;
+      border-radius: 50%;
+      border: 3px solid #2e86de;
+      background: url("farhaan.jpg") no-repeat center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: gray;
+      font-size: 12px;
+      text-align: center;
+    }
+    .photo::before {
+      content: "Image Not Found";
+      display: none;
+    }
+    .photo.broken {
+      background: none;
+      border: 3px dashed #2e86de;
+    }
+    .photo.broken::before {
+      display: block;
+    }
+    .details {
+      text-align: left;
+      margin-top: 15px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .details b {
+      color: #2e86de;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 13px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="id-card">
+    <div class="header">Voorhees College</div>
+    <div class="photo"></div>
+    <div class="details">
+      <p><b>Name:</b> SYED FARHAAN</p>
+      <p><b>Roll No:</b> 32324U18049</p>
+      <p><b>Course:</b> B.Sc Computer Science</p>
+      <p><b>Batch:</b> 2024 - 2027</p>
+      <p><b>DOB:</b> 04/11/2006</p>
+      <p><b>Blood Group:</b> O+</p>
+      <p><b>Phone:</b> 744864335</p>
+    </div>
+    <div class="footer">College Identity Card</div>
+  </div>
+
+  <script>
+    // Check if image URL is valid
+    const img = new Image();
+    img.src ="" alt=image not found;
+    img.onerror = function() {
+      document.querySelector(".photo").classList.add("broken");
+    };
+  </script>
+</body>
+</html>
